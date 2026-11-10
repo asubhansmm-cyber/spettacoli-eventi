@@ -250,6 +250,13 @@ function initScroll() {
   ScrollTrigger.refresh()
 }
 
+$('#newsForm').addEventListener('submit', (e) => {
+  e.preventDefault()
+  const i = e.target.email, ok = /\S+@\S+\.\S+/.test(i.value)
+  i.style.borderColor = ok ? '' : '#ff5a5a'
+  $('#newsOk').hidden = !ok
+})
+
 /* ---------- YouTube click-to-play ---------- */
 $$('.vid').forEach((b) => b.addEventListener('click', () => {
   const f = document.createElement('iframe')
