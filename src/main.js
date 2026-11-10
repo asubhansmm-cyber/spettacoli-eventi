@@ -84,12 +84,14 @@ function runLoader() {
   tl.to('.loader__dots,.loader__count,.loader__star', { opacity: 0, duration: 0.4 }, '<')
   tl.to(loader, { yPercent: -100, duration: 1.1, ease: 'power4.inOut', onStart: intro }, '-=0.1')
   tl.set(loader, { display: 'none' })
-  tl.add(() => { lenis.start(); initScroll() })
+  tl.add(() => { window.__loaderDone = Math.round(performance.now()); lenis.start(); initScroll() })
 }
 if (reduce) {
   loader.remove(); lenis.start(); initScroll()
 } else {
-  Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1500))]).then(() => requestAnimationFrame(runLoader))
+  Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 1500))]).then(runLoader)
+  // failsafe: never leave the visitor stuck on the loader
+  setTimeout(() => { if (!window.__loaderDone) { loader.style.display = 'none'; lenis.start(); intro(); initScroll() } }, 9000)
 }
 
 /* ---------- Header / progress ---------- */
@@ -232,7 +234,7 @@ function initScroll() {
     gsap.fromTo(img, { scale: 1.25 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: '.shows', start: 'top top', end: () => '+=' + dist(), scrub: true } }))
 
   // cards grid
-  ScrollTrigger.batch('.gcard, .soc, .room, .rev, .where__map', { start: 'top 90%', once: true,
+  ScrollTrigger.batch('.gcard, .soc, .room, .rev, .vid, .where__map', { start: 'top 90%', once: true,
     onEnter: (b) => gsap.from(b, { opacity: 0, y: 90, rotate: 2, scale: 0.94, duration: 1.1, stagger: 0.1, ease: 'power4.out' }) })
 
   // band parallax + text
@@ -247,6 +249,14 @@ function initScroll() {
   gsap.from('.footer__big', { yPercent: 40, opacity: 0, duration: 1.4, ease: 'power4.out', scrollTrigger: { trigger: '.footer', start: 'top 85%' } })
   ScrollTrigger.refresh()
 }
+
+/* ---------- YouTube click-to-play ---------- */
+$$('.vid').forEach((b) => b.addEventListener('click', () => {
+  const f = document.createElement('iframe')
+  f.src = `https://www.youtube-nocookie.com/embed/${b.dataset.id}?autoplay=1&rel=0`
+  f.allow = 'autoplay; encrypted-media; picture-in-picture'; f.allowFullscreen = true; f.title = b.getAttribute('aria-label')
+  b.appendChild(f)
+}, { once: true }))
 
 /* ---------- Rooms / booking preview ---------- */
 const roomImg = $('#roomImg'), roomBadge = $('#roomBadge'), fRoom = $('#fRoom')
