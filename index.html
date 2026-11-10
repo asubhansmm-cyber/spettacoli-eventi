@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spettacoli Eventi — Lo show è il tuo, il palco è l'Italia</title>
+<meta name="description" content="Agenzia di spettacoli ed eventi a Civitanova Marche: fuoco, matrimoni, eventi aziendali, feste di piazza, artisti di strada. Oltre 3000 eventi in tutta Italia in 10 anni." />
+<meta property="og:title" content="Spettacoli Eventi — Civitanova Marche" />
+<meta property="og:description" content="Dalla riviera delle Marche a tutta Italia: spettacoli, artisti e organizzazione eventi." />
+<meta property="og:image" content="/media/img/fuoco-4.jpg" />
+<link rel="icon" href="/media/stella.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;700&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__stars"></div>
+  <img class="loader__star" src="/media/stella.png" alt="" />
+  <div class="loader__word"><span>S</span><span>P</span><span>E</span><span>T</span><span>T</span><span>A</span><span>C</span><span>O</span><span>L</span><span>I</span></div>
+  <div class="loader__dots"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="loader__count"><span id="loaderNum">0</span>%</div>
+</div>
+
+<div class="cursor" id="cursor"><span></span></div>
+<div class="progress" id="progress"></div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <a href="#top" class="logo" aria-label="Spettacoli Eventi">
+    <img src="/media/stella.png" alt="" class="logo__star" />
+    <span class="logo__text"><b>Spettacoli</b><b>Eventi</b></span>
+  </a>
+  <div class="header__right">
+    <a href="#prenota" class="btn btn--sm btn--hot magnetic header__cta"><span>Prenota</span></a>
+    <button class="menu-btn magnetic" id="menuBtn" aria-expanded="false" aria-controls="menu">
+      <span class="menu-btn__label">Menu</span>
+      <span class="menu-btn__bars"><i></i><i></i></span>
+    </button>
+  </div>
+</header>
+
+<!-- FULLSCREEN MENU -->
+<nav class="menu" id="menu" aria-label="Menu principale">
+  <div class="menu__bg" id="menuBg"></div>
+  <ul class="menu__list">
+    <li><a href="#show" data-img="/media/img/fuoco-2.jpg"><em>01</em><span>Gli Show</span><small>Fuoco, luci, magia</small></a></li>
+    <li><a href="#generi" data-img="/media/img/matrimonio.jpg"><em>02</em><span>Per ogni evento</span><small>Matrimoni, piazze, aziende</small></a></li>
+    <li><a href="#stanze" data-img="/media/img/robot.jpg"><em>03</em><span>Stanze &amp; Location</span><small>Prenota la tua sala</small></a></li>
+    <li><a href="#clienti" data-img="/media/img/clienti.jpg"><em>04</em><span>Clienti</span><small>Chi si è affidato a noi</small></a></li>
+    <li><a href="#social" data-img="/media/img/aerea.jpg"><em>05</em><span>Social &amp; Video</span><small>Seguici dietro le quinte</small></a></li>
+    <li><a href="#prenota" data-img="/media/img/violino.jpg"><em>06</em><span>Preventivo</span><small>Scrivici su WhatsApp</small></a></li>
+  </ul>
+  <div class="menu__foot">
+    <span>Civitanova Marche (MC)</span>
+    <a href="https://wa.me/393391761176" target="_blank" rel="noopener">+39 339 176 1176</a>
+    <a href="https://www.instagram.com/spettacolieventi/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.facebook.com/spettacolieventi.it/" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.youtube.com/channel/UCa-dSfT-FTt0L1XaR8TlRqA" target="_blank" rel="noopener">YouTube</a>
+  </div>
+</nav>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <video class="hero__video" autoplay muted loop playsinline poster="/media/img/fuoco-4.jpg">
+    <source src="/media/hero.mp4" type="video/mp4" />
+  </video>
+  <div class="hero__shade"></div>
+  <canvas class="sparks" id="sparks"></canvas>
+  <div class="hero__inner">
+    <p class="hero__kicker" data-split>Benvenuti da Civitanova Marche, riviera dell'Adriatico</p>
+    <h1 class="hero__title">
+      <span class="line"><span class="line__in">Lo show</span></span>
+      <span class="line"><span class="line__in">è <i class="grad">tuo.</i></span></span>
+      <span class="line"><span class="line__in">Il palco, <i class="outline">l'Italia</i></span></span>
+    </h1>
+    <div class="hero__row">
+      <p class="hero__lead">Fuoco, luci, trampoli, danza aerea e artisti da tutta Italia. Nati sul mare delle Marche, accendiamo piazze, matrimoni e aziende dal 2012.</p>
+      <div class="hero__ctas">
+        <a href="#prenota" class="btn btn--hot magnetic"><span>Chiedi un preventivo</span></a>
+        <a href="#show" class="btn btn--ghost magnetic"><span>Scopri gli show</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero__badge" aria-hidden="true">
+    <svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+      <text><textPath href="#circ">+3000 eventi · 10 anni di show · in tutta Italia · </textPath></text></svg>
+    <img src="/media/stella.png" alt="" />
+  </div>
+  <div class="hero__scroll"><span>Scroll</span><i></i></div>
+</section>
+
+<!-- MARQUEE -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Fuoco</span><b>★</b><span>Matrimoni</span><b>★</b><span>Feste di piazza</span><b>★</b><span>Eventi aziendali</span><b>★</b><span>Artisti di strada</span><b>★</b><span>Danza aerea</span><b>★</b><span>Carnevale</span><b>★</b><span>Natale</span><b>★</b>
+    <span>Fuoco</span><b>★</b><span>Matrimoni</span><b>★</b><span>Feste di piazza</span><b>★</b><span>Eventi aziendali</span><b>★</b><span>Artisti di strada</span><b>★</b><span>Danza aerea</span><b>★</b><span>Carnevale</span><b>★</b><span>Natale</span><b>★</b>
+  </div>
+</section>
+
+<!-- INTRO / STATS -->
+<section class="intro section" id="agenzia">
+  <div class="wrap">
+    <p class="eyebrow">L'agenzia</p>
+    <h2 class="big reveal-lines">Dal lungomare di Civitanova alle piazze di tutta Italia: <span class="grad">produciamo emozioni</span> dal vivo.</h2>
+    <div class="intro__cols">
+      <p>Spettacoli Eventi progetta, organizza e produce singole attrazioni, show e performance, ma anche eventi completi: matrimoni, feste private, serate nei locali, sagre, congressi e grandi eventi aziendali.</p>
+      <p>Il nostro quartier generale è nelle Marche, tra mare e colline. Da qui partiamo ogni settimana con artisti, scenografie e tecnici per portare meraviglia ovunque ci chiami il pubblico.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b data-count="3000" data-plus>0</b><span>eventi in tutta Italia</span></div>
+      <div class="stat"><b data-count="10">0</b><span>anni di palco</span></div>
+      <div class="stat"><b data-count="34" data-k>0</b><span>fan su Instagram</span></div>
+      <div class="stat"><b data-count="49">0</b><span>recensioni 5★ su Google</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWS: horizontal ticket cards -->
+<section class="shows" id="show">
+  <div class="shows__pin">
+    <div class="shows__head wrap">
+      <p class="eyebrow">Il cartellone</p>
+      <h2 class="big">Gli show <span class="outline">più richiesti</span></h2>
+    </div>
+    <div class="shows__track" id="showsTrack">
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/fuoco-1.jpg" alt="Spettacolo di fuoco con artista in costume dorato" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-01</span><h3>Spettacolo di fuoco</h3><p>Danza, giocoleria, fakirismo e fontane pirotecniche. Da 12 a 25 minuti di fiamme, perfetti per cene sul mare e serate sotto le stelle.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/robot.jpg" alt="Robot luminosi su trampoli" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-02</span><h3>Robot LED su trampoli</h3><p>Giganti luminosi che sfilano tra la folla: l'effetto wow per inaugurazioni, lidi e festival estivi.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/aerea.jpg" alt="Hula hoop, sfera contact e danza aerea" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-03</span><h3>Danza aerea &amp; hula hoop</h3><p>Sfera contact, bolle di sapone e acrobazie in sospensione. Eleganza pura per eventi di lusso.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/parata.jpg" alt="Parata con trampoli e monociclo" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-04</span><h3>Parate &amp; trampolieri</h3><p>Animazione itinerante con trampoli, monociclo e giocoleria: la colonna sonora dei centri storici in festa.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/comico.jpg" alt="Spettacolo comico interattivo" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-05</span><h3>Comico &amp; interattivo</h3><p>Giocoleria ed equilibrismo con il pubblico protagonista. Risate garantite, dai bambini ai nonni.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket" data-tilt>
+        <div class="ticket__img"><img src="/media/img/ragazzi.jpg" alt="Teatro ragazzi" loading="lazy" /></div>
+        <div class="ticket__body"><span class="ticket__no">S-06</span><h3>Teatro ragazzi</h3><p>Storie, personaggi e fantasia per far vivere a bambini e famiglie una festa che non dimenticheranno.</p><div class="barcode"></div></div>
+      </article>
+      <article class="ticket ticket--end">
+        <div class="ticket__body ticket__body--end"><h3>E ancora…</h3><p>Burlesque, violino elettrico, personaggi famosi, artisti per TV e cinema.</p><a href="#prenota" class="btn btn--hot magnetic"><span>Costruisci il tuo show</span></a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GENERI -->
+<section class="generi section" id="generi">
+  <div class="wrap">
+    <p class="eyebrow">Per ogni occasione</p>
+    <h2 class="big reveal-lines">Un evento, <span class="grad">mille modi</span> di accenderlo.</h2>
+    <div class="cards">
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/matrimonio.jpg" alt="Matrimonio in villa illuminata" loading="lazy" /><div><span>Matrimoni</span><p>Dall'aperitivo in giardino al gran finale con il fuoco in riva al mare.</p></div></a>
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/parata.jpg" alt="Feste di piazza" loading="lazy" /><div><span>Feste di piazza</span><p>Sagre, patroni, estate nei borghi: animazione che riempie le piazze.</p></div></a>
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/tv.jpg" alt="Artisti per TV e cinema" loading="lazy" /><div><span>TV &amp; Cinema</span><p>Artisti e figurazioni speciali per produzioni, agenzie e broadcaster.</p></div></a>
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/violino.jpg" alt="Violinista elettrico" loading="lazy" /><div><span>Eventi aziendali</span><p>Gala, lanci prodotto, team building: show su misura del tuo brand.</p></div></a>
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/burlesque.jpg" alt="Burlesque" loading="lazy" /><div><span>Locali &amp; serate</span><p>Più energia, più vendite: show per locali, lidi e strutture turistiche.</p></div></a>
+      <a class="gcard" href="#prenota" data-tilt><img src="/media/img/ragazzi.jpg" alt="Compleanni e bambini" loading="lazy" /><div><span>Compleanni &amp; Natale</span><p>Feste private, Carnevale e magia di Natale per tutta la famiglia.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- PARALLAX BAND -->
+<section class="band">
+  <div class="band__bg" data-parallax><img src="/media/img/matrimonio.jpg" alt="" /></div>
+  <div class="band__txt"><h2 class="big">«Il mare ti dà la scena. <span class="grad">Noi, lo show.</span>»</h2></div>
+</section>
+
+<!-- STANZE -->
+<section class="stanze section" id="stanze">
+  <div class="wrap">
+    <p class="eyebrow">Stanze &amp; Location</p>
+    <h2 class="big reveal-lines">Scegli la tua <span class="grad">sala</span>, noi pensiamo al resto.</h2>
+    <p class="lead">Spazi pensati per provare, ospitare e festeggiare, a due passi dal mare di Civitanova Marche. Seleziona una stanza e invia la richiesta: ti rispondiamo su WhatsApp.</p>
+    <div class="rooms">
+      <button class="room is-active" data-room="Sala Stella" data-img="/media/img/matrimonio.jpg" type="button"><span class="room__no">A-01</span><b>Sala Stella</b><small>fino a 120 ospiti · eventi &amp; cerimonie</small></button>
+      <button class="room" data-room="Sala Cosmica" data-img="/media/img/robot.jpg" type="button"><span class="room__no">A-02</span><b>Sala Cosmica</b><small>fino a 60 ospiti · feste &amp; party</small></button>
+      <button class="room" data-room="Sala Fuoco" data-img="/media/img/fuoco-2.jpg" type="button"><span class="room__no">A-03</span><b>Sala Fuoco</b><small>fino a 40 ospiti · riunioni &amp; prove</small></button>
+      <button class="room" data-room="Terrazza sul mare" data-img="/media/img/aerea.jpg" type="button"><span class="room__no">A-04</span><b>Terrazza sul mare</b><small>fino a 200 ospiti · all'aperto</small></button>
+    </div>
+    <div class="booking">
+      <div class="booking__img"><img id="roomImg" src="/media/img/matrimonio.jpg" alt="Anteprima stanza" /><span id="roomBadge">Sala Stella</span></div>
+      <form class="form" id="bookForm" novalidate>
+        <div class="form__tag">ANTEPRIMA · il modulo non invia ancora i dati</div>
+        <label>Stanza<input id="fRoom" name="room" value="Sala Stella" readonly /></label>
+        <div class="form__2">
+          <label>Check-in<input type="date" name="from" required /></label>
+          <label>Check-out<input type="date" name="to" required /></label>
+        </div>
+        <div class="form__2">
+          <label>Ospiti<input type="number" name="guests" min="1" max="300" value="20" required /></label>
+          <label>Tipo evento
+            <select name="type"><option>Matrimonio</option><option>Festa privata</option><option>Evento aziendale</option><option>Compleanno</option><option>Altro</option></select>
+          </label>
+        </div>
+        <div class="form__2">
+          <label>Nome e cognome<input type="text" name="name" placeholder="Mario Rossi" required /></label>
+          <label>Telefono<input type="tel" name="phone" placeholder="+39 …" required /></label>
+        </div>
+        <button class="btn btn--hot btn--block magnetic" type="submit"><span>Richiedi disponibilità</span></button>
+        <p class="form__ok" id="bookOk" role="status" hidden></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTI -->
+<section class="clienti section" id="clienti">
+  <div class="wrap">
+    <p class="eyebrow">Clienti</p>
+    <h2 class="big reveal-lines">Chi si è già <span class="grad">affidato a noi</span>.</h2>
+    <div class="clienti__sheet"><img src="/media/img/clienti.jpg" alt="Loghi dei clienti: automotive, sport, moda, banche, carnevali" loading="lazy" /></div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social section" id="social">
+  <div class="wrap">
+    <p class="eyebrow">Seguici</p>
+    <h2 class="big reveal-lines">Il dietro le quinte è <span class="grad">sui social</span>.</h2>
+    <div class="social__grid">
+      <a class="soc" href="https://www.instagram.com/spettacolieventi/" target="_blank" rel="noopener" data-tilt><img src="/media/img/fuoco-3.jpg" alt="" loading="lazy" /><div><b>Instagram</b><span>@spettacolieventi · 34K follower</span></div></a>
+      <a class="soc" href="https://www.facebook.com/spettacolieventi.it/" target="_blank" rel="noopener" data-tilt><img src="/media/img/palla.jpg" alt="" loading="lazy" /><div><b>Facebook</b><span>Spettacoli Eventi · 3K follower</span></div></a>
+      <a class="soc" href="https://www.youtube.com/channel/UCa-dSfT-FTt0L1XaR8TlRqA" target="_blank" rel="noopener" data-tilt><img src="/media/img/burlesque.jpg" alt="" loading="lazy" /><div><b>YouTube</b><span>Video degli show</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI -->
+<section class="reviews section" id="recensioni">
+  <div class="wrap">
+    <p class="eyebrow">Parlano di noi</p>
+    <h2 class="big reveal-lines"><span class="grad">5,0 ★</span> su Google, 49 recensioni.</h2>
+    <div class="reviews__grid">
+      <blockquote class="rev" data-tilt><p>«Volevamo rendere epico un addio al celibato! Organizzazione perfetta in meno di 24h dall'evento. Grandissimi.»</p><cite>Marco Perini · Google</cite></blockquote>
+      <blockquote class="rev" data-tilt><p>«Joel è stato molto professionale e disponibile. Il ragazzo che è venuto era puntuale, bravo e simpaticissimo: ci hanno fatto tutti i complimenti.»</p><cite>Claudia Pasotto · compleanno</cite></blockquote>
+      <blockquote class="rev" data-tilt><p>«Ci hanno seguito nel gestire al meglio l'intrattenimento per il mio matrimonio: una giornata indimenticabile.»</p><cite>Studio Amoroso Antonella · matrimonio</cite></blockquote>
+      <blockquote class="rev" data-tilt><p>«Esperienza fantastica. Molto disponibili anche per un'organizzazione fatta quasi all'ultimo minuto. Artisti bravi.»</p><cite>Faby · Google</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- DOVE SIAMO -->
+<section class="where section" id="dove">
+  <div class="wrap where__grid">
+    <div>
+      <p class="eyebrow">Dove siamo</p>
+      <h2 class="big reveal-lines">Nel cuore di <span class="grad">Civitanova Marche.</span></h2>
+      <ul class="where__list">
+        <li><b>Indirizzo</b>Piazza XX Settembre, 62012 Civitanova Marche (MC)</li>
+        <li><b>Telefono &amp; WhatsApp</b><a href="tel:+393391761176">339 176 1176</a></li>
+        <li><b>Email</b><a href="mailto:info@spettacolieventi.it">info@spettacolieventi.it</a></li>
+        <li><b>Orari</b>Sempre aperti, rispondiamo anche in serata</li>
+      </ul>
+      <a class="btn btn--hot magnetic" href="https://maps.app.goo.gl/Khv42eK4uePWZbBG6" target="_blank" rel="noopener"><span>Apri su Google Maps</span></a>
+    </div>
+    <div class="where__map"><iframe title="Mappa Spettacoli Eventi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=43.3069145,13.729828&amp;z=15&amp;output=embed"></iframe></div>
+  </div>
+</section>
+
+<!-- CTA / PRENOTA -->
+<section class="cta section" id="prenota">
+  <div class="cta__glow"></div>
+  <div class="wrap cta__in">
+    <p class="eyebrow">Preventivo senza impegno</p>
+    <h2 class="huge"><span class="line"><span class="line__in">Accendiamo</span></span><span class="line"><span class="line__in"><i class="grad">il tuo evento?</i></span></span></h2>
+    <p class="lead">Raccontaci data, luogo e numero di ospiti. Ti ricontattiamo in giornata con la proposta giusta.</p>
+    <div class="cta__row">
+      <a class="btn btn--wa btn--lg magnetic" href="https://wa.me/393391761176?text=Ciao%20Spettacoli%20Eventi%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener"><span>Scrivici su WhatsApp</span></a>
+      <a class="btn btn--ghost btn--lg magnetic" href="tel:+393391761176"><span>+39 339 176 1176</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__big" aria-hidden="true">SPETTACOLI EVENTI</div>
+  <div class="wrap footer__grid">
+    <div>
+      <img src="/media/stella.png" alt="" class="footer__star" />
+      <p>Spettacoli Eventi<br/>Piazza XX Settembre<br/>62012 Civitanova Marche (MC)<br/>info@spettacolieventi.it<br/>P.IVA 01907890436</p>
+    </div>
+    <div>
+      <h4>Esplora</h4>
+      <a href="#show">Gli show</a><a href="#generi">Per ogni evento</a><a href="#stanze">Stanze &amp; Location</a><a href="#clienti">Clienti</a>
+    </div>
+    <div>
+      <h4>Contatti</h4>
+      <a href="https://wa.me/393391761176" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://www.instagram.com/spettacolieventi/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/spettacolieventi.it/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.youtube.com/channel/UCa-dSfT-FTt0L1XaR8TlRqA" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div>
+      <h4>Sei un artista?</h4>
+      <a href="https://spettacolieventi.it/lavora-con-noi/" target="_blank" rel="noopener">Lavora con noi</a>
+      <a href="https://spettacolieventi.it/dichiarazione-sulla-privacy-ue/" target="_blank" rel="noopener">Privacy</a>
+      <a href="https://spettacolieventi.it/cookie-policy-ue/" target="_blank" rel="noopener">Cookie policy</a>
+    </div>
+  </div>
+  <p class="footer__copy">© 2012 – 2026 Spettacoli Eventi · Civitanova Marche · Tutti i diritti riservati</p>
+</footer>
+
+<a href="https://wa.me/393391761176?text=Ciao%20Spettacoli%20Eventi%2C%20vorrei%20prenotare" class="wa" target="_blank" rel="noopener" aria-label="Prenota su WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16.04 3C9.4 3 4 8.4 4 15.04c0 2.12.55 4.18 1.6 6L4 29l8.14-1.56a12 12 0 0 0 3.9.66C22.68 28.1 28 22.7 28 16.06 28 9.4 22.68 3 16.04 3Zm0 22.1c-1.2 0-2.37-.3-3.4-.9l-.5-.28-4.83.93.96-4.7-.32-.52a9.1 9.1 0 0 1-1.4-4.9c0-5.04 4.1-9.14 9.16-9.14 5.04 0 9.12 4.1 9.12 9.14 0 5.06-4.08 9.37-8.8 9.37Zm5.02-6.86c-.28-.14-1.64-.8-1.9-.9-.25-.1-.44-.14-.62.14-.18.27-.7.9-.86 1.08-.16.18-.32.2-.6.07-.27-.14-1.17-.43-2.22-1.37-.82-.73-1.37-1.63-1.53-1.9-.16-.27-.02-.42.12-.56.12-.12.27-.32.4-.48.14-.16.18-.27.27-.46.1-.18.05-.34-.02-.48-.07-.14-.62-1.5-.85-2.05-.22-.54-.45-.46-.62-.47h-.53c-.18 0-.48.07-.73.34-.25.27-.96.94-.96 2.3s.98 2.67 1.12 2.85c.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.66.2 1.25.17 1.72.1.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.2-.52-.34Z"/></svg>
+  <span>Prenota</span>
+</a>
+</body>
+</html>
