@@ -84,6 +84,7 @@ function runLoader() {
   tl.to('.loader__dots,.loader__count,.loader__star', { opacity: 0, duration: 0.4 }, '<')
   tl.to(loader, { yPercent: -100, duration: 1.1, ease: 'power4.inOut', onStart: intro }, '-=0.1')
   tl.set(loader, { display: 'none' })
+  window.__loaderDuration = +tl.duration().toFixed(2)
   tl.add(() => { window.__loaderDone = Math.round(performance.now()); lenis.start(); initScroll() })
 }
 if (reduce) {
